@@ -1,5 +1,6 @@
 # Interactive News Globe (ING)
-This is a project where we can have access to news content based on countries. Most of the news content will be based on top news. The user will get their content from the interactive visual globe.  
+This is a project where we can have access to news content based on countries. Most of the news content will be based on top news. The user will get their content from the interactive visual globe. it allows user to
+gain more information from the geological location and geopolitical location view. It also allows users to interact with news from a different perspective by having users interact with the globe in ways that it promotes new discoveries on part of the planet we are not familiar with.
 
 ![This is a screenshot.](images.png)
 # How to run

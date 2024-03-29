@@ -1,20 +1,17 @@
 # Interactive News Globe (ING)
-Put here a short paragraph describing your project. 
-Adding an screenshot or a mockup of your application in action would be nice.  
+This is a project where we can have access to news content based on countries. Most of the news content will be based on top news. The user will get their content from the interactive visual globe.  
 
 ![This is a screenshot.](images.png)
 # How to run
-Provide here instructions on how to use your application.   
-- Download the latest binary from the Release section on the right on GitHub.  
-- On the command line uncompress using
+Clone this project, make sure that you run the latest version of npm.
+When done cloning the project, run this command:\
 ```
-tar -xzf  
+npm install  
 ```
-- On the command line run with
+This allows to install the packages needed (Craco, Resium, Cesium)
 ```
-./hello
+npm start  
 ```
-- You will see Hello World! on your terminal. 
 
 # How to contribute
 Follow this project board to know the latest status of the project: [http://...]([http://...])  

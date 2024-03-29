@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import { Cartesian3, Color } from "cesium";
+import { Viewer, Entity } from "resium";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Viewer full>
+      <Entity
+        name="Philadelphia"
+        position={Cartesian3.fromDegrees(-75.165222, 39.952583)}
+        point={{ pixelSize: 10, color: Color.BLACK }}
+        description="hoge"
+      />
+    </Viewer>
   );
 }
-
-export default App;

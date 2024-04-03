@@ -12,6 +12,7 @@ export default function App() {
     { name: 'Philadelphia', position:[-75.165222, 39.952583] }
   ];
 
+  //display countries 
   return (
     <Viewer full>
       {countries.map((country, index) => (

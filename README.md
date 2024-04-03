@@ -32,4 +32,16 @@ Have one reviewer be the moderator (mod), this is the role that not just reviews
 - Use InteliJ 11
 - Specify additional library to download if needed 
 - What file and target to compile and run. 
-- What is expected to happen when the app start. 
+- What is expected to happen when the app start.
+
+## Special Thanks to:
+Aidan
+Jared
+Seth
+Declan
+
+## API/Softwares used
+- React.JS
+- CesiumJS
+- Resium
+- NewsAPI

@@ -16,6 +16,7 @@ export default function App() {
     <Viewer full>
       {countries.map((country, index) => (
       <Entity
+        //Add points for minor/major cities in United States, and major cities abroad
         key={index}
         name= {country.name}
         position={Cartesian3.fromDegrees(country.position[0], country.position[1])}

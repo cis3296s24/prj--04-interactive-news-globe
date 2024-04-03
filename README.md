@@ -18,7 +18,7 @@ npm start
 # How to contribute
 ## Step 1
 Create a new branch in this format:
-<name>-<feature>-<version(optional)>
+(name)-(feature)-(version(optional))
 When a new branch is created, work on the feature you will work on.
 ## Step 2
 For every small logic that works make sure to add and commit. You can commit without pushing, you push to the remote repository until you think you are completely done with the project and is available to review.

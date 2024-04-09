@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/prj--04-interactive-news-globe/static/js/main.d449f71a.js",
+    "static/js/453.c7cdf89c.chunk.js": "/prj--04-interactive-news-globe/static/js/453.c7cdf89c.chunk.js",
+    "index.html": "/prj--04-interactive-news-globe/index.html",
+    "main.d449f71a.js.map": "/prj--04-interactive-news-globe/static/js/main.d449f71a.js.map",
+    "453.c7cdf89c.chunk.js.map": "/prj--04-interactive-news-globe/static/js/453.c7cdf89c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.d449f71a.js"
+  ]
+}

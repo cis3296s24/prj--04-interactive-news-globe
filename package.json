@@ -13,7 +13,9 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "resium": "^1.17.2",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "geojson": "^0.5.0",
+    "czml-writer": "^1.0.3"
   },
   "scripts": {
     "start": "craco start",

@@ -15,6 +15,8 @@ This allows to install the packages needed (Craco, Resium, Cesium)
 npm start  
 ```
 
+To see the current deployment of the project, click [Here](https://cis3296s24.github.io/prj--04-interactive-news-globe/).
+
 # How to contribute
 ## Step 1
 Create a new branch in this format:

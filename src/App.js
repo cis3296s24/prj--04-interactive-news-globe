@@ -1,6 +1,7 @@
 import { Cartesian3, Color } from "cesium";
 import { Viewer, Entity } from "resium";
 import CountriesLog from "./CountriesLog.js";
+import viewSettings from "./viewSettings.js"
 import { newsapi } from "./news.js"
 
 const countryInfo = new CountriesLog();
@@ -17,7 +18,7 @@ export default function App() {
   });
 
   return (
-    <Viewer full>
+    <Viewer full {... viewSettings}>
       {countries.map((country, index) => (
         <Entity
           //Add points for minor/major cities in United States, and major cities abroad

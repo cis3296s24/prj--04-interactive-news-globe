@@ -3,20 +3,27 @@ import { Viewer, Entity } from "resium";
 import CountriesLog from "./CountriesLog.js";
 import viewSettings from "./viewSettings.js"
 import { newsapi } from "./news.js"
-import { Card } from "react-bootstrap"
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import React, { useState, useEffect } from "react";
 
 const countryInfo = new CountriesLog();
 
 export default function App() {
+  const [articles, setArticles] = useState([]);
+  useEffect(() => {
+    newsapi.v2.topHeadlines({
+      q: 'trump',
+      category: 'politics',
+      language: 'en',
+      country: 'us'
+    }).then(response => {
+      console.log(response);
+      setArticles(response.articles);
+    });
+  }, []); // Empty dependency array to run the effect only once
+
   const countries = countryInfo.getAllCountries();
-  newsapi.v2.topHeadlines({
-    q: 'trump',
-    category: 'politics',
-    language: 'en',
-    country: 'us'
-  }).then(response => {
-    console.log(response);
-  });
 
   return (
     <Viewer full {...viewSettings}>
@@ -30,15 +37,19 @@ export default function App() {
           description={country.name}
         />
       ))}
-      <Card>
-        <Card.Header>Card heading without a title</Card.Header>
-        <Card.Body>Card content</Card.Body>
-      </Card>
-      <Card>
-        <Card.Header>
-          <Card.Title as="h3">Card heading with a title</Card.Title>
-        </Card.Header>
-        <Card.Body>Card content</Card.Body>
+      <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src="./images/imageexample.jpg" />
+        <Card.Body>
+          {articles.length > 0 ? (
+            <>
+              <Card.Title>{articles[0].title}</Card.Title>
+              <Card.Text>{articles[0].description}</Card.Text>
+            </>
+          ) : (
+            <Card.Title>Loading...</Card.Title>
+          )}
+          <Button variant="primary">Go somewhere</Button>
+        </Card.Body>
       </Card>
     </Viewer>
   );

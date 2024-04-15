@@ -3,6 +3,7 @@ import { Viewer, Entity } from "resium";
 import CountriesLog from "./CountriesLog.js";
 import viewSettings from "./viewSettings.js"
 import { newsapi } from "./news.js"
+import { Card } from "react-bootstrap"
 
 const countryInfo = new CountriesLog();
 
@@ -18,7 +19,7 @@ export default function App() {
   });
 
   return (
-    <Viewer full {... viewSettings}>
+    <Viewer full {...viewSettings}>
       {countries.map((country, index) => (
         <Entity
           //Add points for minor/major cities in United States, and major cities abroad
@@ -29,6 +30,16 @@ export default function App() {
           description={country.name}
         />
       ))}
+      <Card>
+        <Card.Header>Card heading without a title</Card.Header>
+        <Card.Body>Card content</Card.Body>
+      </Card>
+      <Card>
+        <Card.Header>
+          <Card.Title as="h3">Card heading with a title</Card.Title>
+        </Card.Header>
+        <Card.Body>Card content</Card.Body>
+      </Card>
     </Viewer>
   );
 }

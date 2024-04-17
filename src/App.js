@@ -25,7 +25,7 @@ export default function App() {
           key={index}
           name={country.name}
           position={Cartesian3.fromDegrees(country.position[0], country.position[1])}
-          point={{ pixelSize: 10, color: Color.BLACK }}
+          point={{ pixelSize: 10, color: Color.WHITESMOKE }}
           description={country.name}
         />
       ))}

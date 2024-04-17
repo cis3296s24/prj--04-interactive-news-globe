@@ -1,0 +1,70 @@
+.sidebar-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 33%;  /* Take up a third of the page */
+    height: 100vh;  /* Full viewport height */
+    z-index: 1000; /* Ensure it's on top */
+    overflow: auto; /* Allows scrolling if content overflows */
+  }
+  
+
+  .country-select {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 200px;
+}
+
+.button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.news-article {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.news-article:hover {
+    transform: translateY(-5px);
+}
+
+.news-article img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.news-article h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.news-article p {
+    color: #666;
+}
+
+.news-article a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.news-article a:hover {
+    text-decoration: underline;
+}

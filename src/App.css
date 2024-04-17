@@ -28,6 +28,16 @@
   color: #61dafb;
 }
 
+.viewer-container {
+  position: absolute;
+  left: 0;
+  right: 33%;  /* Adjust so it does not overlap the sidebar */
+  top: 0;
+  bottom: 0;
+  width: auto; /* Adjust width automatically */
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

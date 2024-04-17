@@ -13,7 +13,6 @@ export default function App() {
   const [articles, setArticles] = useState([]);
   useEffect(() => {
     newsapi.v2.topHeadlines({
-      q: 'trump',
       category: 'politics',
       language: 'en',
       country: 'us'
@@ -44,11 +43,11 @@ export default function App() {
             <>
               <Card.Title>{articles[0].title}</Card.Title>
               <Card.Text>{articles[0].description}</Card.Text>
+              <Button variant="primary" src={articles[0].url}>Go somewhere</Button>
             </>
           ) : (
             <Card.Title>Loading...</Card.Title>
           )}
-          <Button variant="primary">Go somewhere</Button>
         </Card.Body>
       </Card>
     </Viewer>

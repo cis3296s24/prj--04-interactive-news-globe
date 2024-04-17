@@ -26,7 +26,12 @@ export default function App() {
           name={country.name}
           position={Cartesian3.fromDegrees(country.position[0], country.position[1])}
           point={{ pixelSize: 10, color: Color.WHITESMOKE }}
-          description={country.name}
+          description={
+            `<div>
+              <h3>${country.name}</h3>
+              <img src="${country.flag}" alt="${country.name} Flag" style="width: 100px; height: auto;" />
+            </div>`
+          }
         />
       ))}
     </Viewer>

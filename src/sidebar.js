@@ -8,9 +8,8 @@ function Sidebar({ selectedCountry }) {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    newsapi.v2.topHeadlines({
+    newsapi.v2.everything({
       country: selectedCountry,
-      category: 'politics',
       language: 'en',
     }).then(response => {
       setArticles(response.articles);

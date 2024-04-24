@@ -6,8 +6,8 @@ Interactive News Globe (ING) is a web application that provides users with acces
 ## Table of Contents
 - [How to Run](#how-to-run)
 - [How to Contribute](#how-to-contribute)
-- [Special Thanks](#special-thanks)
-- [APIs/Software Used](#apissoftware-used)
+- [Special Thanks to](#special-thanks-to)
+- [API/Software Used](#apisoftware-used)
 
 
 # How to run
@@ -40,13 +40,13 @@ Have at least two people review the code by making a pull request. When two cont
 Reco:
 Have one reviewer be the moderator (mod), this is the role that not just reviews but makes sure that everything is in order of how the reviewing process should work. This means that the mod makes sure that the key inspector  has reviewed and run the code to make sure it works as it should. The key inspector not only reviews the code, but has to manually go to the contributor's branch, run the code, and make sure it works as the contributor that did the pull request intended to work. The rest can just look at the code and see if there could be improvements in the code.
 
-## Special Thanks to:
+# Special Thanks to
 Aidan
 Jared
 Seth
 Declan
 
-## API/Software used
+# API/Software Used
 - React.JS
 - CesiumJS
 - Resium

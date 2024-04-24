@@ -1,33 +1,44 @@
 import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import "./sidebar.css";
-import { newsapi } from "./news.js";
 
 function Sidebar({ selectedCountry }) {
   const [articles, setArticles] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('politics'); // Default category
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (selectedCountry) {
-      console.log(`Fetching news for ${selectedCountry.name}`);
-      newsapi.v2.topHeadlines({
-        country: selectedCountry.code,
-        category: selectedCategory,
-        language: 'en',
-        pageSize: 5,
-      }).then(response => {
-        if (response.articles && response.articles.length > 0) {
-          setArticles(response.articles);
+    const fetchNews = async () => {
+      // Check if selectedCountry is valid
+      if (!selectedCountry || !selectedCountry.code) {
+        setError('No country selected or country code missing.');
+        setArticles([]);
+        return;
+      }
+
+      const url = `http://localhost:5000/api/news?country=${selectedCountry.code}&category=${selectedCategory}`;
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.message || 'Failed to fetch news');
+        }
+        const data = await response.json();
+        if (data.articles && data.articles.length > 0) {
+          setArticles(data.articles);
+          setError(null); // Clear any previous errors
         } else {
-          console.log('No articles found');
+          setError('No articles found');
           setArticles([]);
         }
-      }).catch(error => {
-        console.error("Error finding news:", error);
+      } catch (error) {
+        setError(error.message);
         setArticles([]);
-      });
-    }
-  }, [selectedCountry, selectedCategory]); // Include selectedCategory in the dependencies array
+      }
+    };
+
+    fetchNews();
+  }, [selectedCountry, selectedCategory]); // React to changes in selectedCountry or selectedCategory
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
@@ -35,17 +46,13 @@ function Sidebar({ selectedCountry }) {
 
   return (
     <div className="sidebar-container">
-      {/* Make sure to check if selectedCountry is defined and has a name property */}
       <h1>News for {selectedCountry && selectedCountry.name ? selectedCountry.name.toUpperCase() : 'Select a Country'}</h1>
       <div className="category-buttons">
-        <button onClick={() => handleCategoryChange('business')}>Business</button>
-        <button onClick={() => handleCategoryChange('entertainment')}>Entertainment</button>
-        <button onClick={() => handleCategoryChange('general')}>General</button>
-        <button onClick={() => handleCategoryChange('health')}>Health</button>
-        <button onClick={() => handleCategoryChange('science')}>Science</button>
-        <button onClick={() => handleCategoryChange('sports')}>Sports</button>
-        <button onClick={() => handleCategoryChange('technology')}>Technology</button>
+        {['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology', 'politics'].map(category => (
+          <button key={category} onClick={() => handleCategoryChange(category)}>{category}</button>
+        ))}
       </div>
+      {error && <p className="error">{error}</p>}
       {articles.length > 0 ? (
         articles.map((article, index) => (
           <Card key={index} className="news-article">
@@ -58,7 +65,7 @@ function Sidebar({ selectedCountry }) {
           </Card>
         ))
       ) : (
-        <p>No news available.</p>  // Display a message if no articles are found
+        <p>No news available.</p>
       )}
     </div>
   );

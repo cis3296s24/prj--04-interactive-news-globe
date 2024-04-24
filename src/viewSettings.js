@@ -4,7 +4,7 @@ const viewSettings = {
     fullscreenButton: true,
     geocoder: false,
     homeButton: true,
-    infoBox: true,
+    infoBox: false,
     sceneModePicker: true,
     selectionIndicator: true,
     baseLayerPicker: false,

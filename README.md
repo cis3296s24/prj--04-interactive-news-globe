@@ -2,7 +2,8 @@
 This is a project where we can have access to news content based on countries. Most of the news content will be based on top news. The user will get their content from the interactive visual globe. it allows user to
 gain more information from the geological location and geopolitical location view. It also allows users to interact with news from a different perspective by having users interact with the globe in ways that it promotes new discoveries on part of the planet we are not familiar with.
 
-![This is a screenshot.](![image](https://github.com/cis3296s24/prj--04-interactive-news-globe/assets/143616140/235b893d-35a6-4644-a9bf-37eea286ed18)
+![This is a screenshot.](![image](https://github.com/cis3296s24/prj--04-interactive-news-globe/assets/143616140/dd500690-dd6f-45ec-9986-5e7e5241adea)
+)
 )
 # How to run
 Clone this project, make sure that you run the latest version of npm.

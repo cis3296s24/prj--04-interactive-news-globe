@@ -31,13 +31,6 @@ For every small logic that works make sure to add and commit. You can commit wit
 Have at least two people review the code by making a pull request. When two contributors have approved, the code should be able to push to main. Assign one contributor as a moderator, and one as a key inspector, this will be explained later.
 Reco:
 Have one reviewer be the moderator (mod), this is the role that not just reviews but makes sure that everything is in order of how the reviewing process should work. This means that the mod make sure that the key inspector  has reviewed and run the code to make sure it works as it should. The key inspector not just reviews the code, but have to manually go to the contributor's branch, run the code, and make sure it works as the contributor that did the pull request has intended to work. The rest can just look at the code and see if there could be improvements in the code.
-### How to build
-- Use this github repository: ... 
-- Specify what branch to use for a more stable release or for cutting edge development.  
-- Use InteliJ 11
-- Specify additional library to download if needed 
-- What file and target to compile and run. 
-- What is expected to happen when the app start.
 
 ## Special Thanks to:
 Aidan

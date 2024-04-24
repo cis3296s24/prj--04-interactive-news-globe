@@ -4,7 +4,7 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());  // Enable CORS for all routes to allow your frontend to make requests
+app.use(cors());  
 
 app.get('/api/news', async (req, res) => {
     try {

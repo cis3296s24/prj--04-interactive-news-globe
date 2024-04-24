@@ -1,4 +1,8 @@
-// TEST COMMENT SETH
+/*
+ * Purpose: Represents the entry point of the application.
+ * Return Value: None (side effect of rendering the main application component).
+ */
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';

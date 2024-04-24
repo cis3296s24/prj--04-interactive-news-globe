@@ -1,3 +1,8 @@
+/* Class: AppTest
+ * Purpose: Tests the behavior of the App component.
+ * Return Value: None (side effects of rendering and testing components).
+ */
+
 import { render, screen } from '@testing-library/react';
 import App from './App';
 

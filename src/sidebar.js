@@ -1,3 +1,14 @@
+/*
+ * Purpose: Represents a sidebar component displaying news articles based on the selected country and category.
+ * Data Fields:
+ *   - articles: An array containing news articles fetched from the NewsAPI based on the selected country and category.
+ *   - selectedCategory: A string representing the selected category of news articles (e.g., 'business', 'entertainment').
+ * Methods:
+ *   - useEffect: React hook that fetches news articles from the NewsAPI when the selected country or category changes.
+ *   - handleCategoryChange: Function to update the selected category when a category button is clicked.
+ * Return Value: A React component displaying news articles for the selected country and category.
+ */
+
 import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import "./sidebar.css";

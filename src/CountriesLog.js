@@ -1,3 +1,12 @@
+/*
+ * Purpose: Represents a log of countries with their positions and flags.
+ * Data Fields:
+ *   - countries: Array of country objects containing name, position, flag, and code.
+ * Methods:
+ *   - getAllCountries(): Retrieves all countries from the log.
+ * Return Value: Array of country objects.
+ */
+
 export default class CountriesLog {
     constructor() {
         this.countries = [

@@ -1,3 +1,12 @@
+/*
+ * Purpose: Represents the main application component responsible 
+ *     for rendering the interactive globe and sidebar.
+ * Data Fields:
+ *    - articles: Holds the array of articles fetched from the news API.
+ *    - selectedCountry: Stores the currently selected country object.
+ * Return Value: The JSX representing the main application UI.
+ */
+
 import React, { useState, useEffect } from "react";
 import { Viewer, Entity } from "resium";
 import { Cartesian3, Color } from "cesium";

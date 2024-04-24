@@ -3,7 +3,7 @@ const viewSettings = {
     timeline: false,
     fullscreenButton: true,
     geocoder: false,
-    homeButton: false,
+    homeButton: true,
     infoBox: true,
     sceneModePicker: true,
     selectionIndicator: true,

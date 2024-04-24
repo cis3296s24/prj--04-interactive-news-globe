@@ -3,23 +3,49 @@ import Card from 'react-bootstrap/Card';
 import "./sidebar.css";
 import { newsapi } from "./news.js";
 
-
 function Sidebar({ selectedCountry }) {
   const [articles, setArticles] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState('politics'); // Default category
 
   useEffect(() => {
-    newsapi.v2.topHeadlines({
-      country: selectedCountry,
-      category: 'politics',
-      language: 'en',
-    }).then(response => {
-      setArticles(response.articles);
-    });
-  }, [selectedCountry]);
+    if (selectedCountry) {
+      console.log(`Fetching news for ${selectedCountry.name}`);
+      newsapi.v2.topHeadlines({
+        country: selectedCountry.code,
+        category: selectedCategory,
+        language: 'en',
+        pageSize: 5,
+      }).then(response => {
+        if (response.articles && response.articles.length > 0) {
+          setArticles(response.articles);
+        } else {
+          console.log('No articles found');
+          setArticles([]);
+        }
+      }).catch(error => {
+        console.error("Error finding news:", error);
+        setArticles([]);
+      });
+    }
+  }, [selectedCountry, selectedCategory]); // Include selectedCategory in the dependencies array
+
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+  };
 
   return (
     <div className="sidebar-container">
-      <h1>News for {selectedCountry.toUpperCase()}</h1>
+      {/* Make sure to check if selectedCountry is defined and has a name property */}
+      <h1>News for {selectedCountry && selectedCountry.name ? selectedCountry.name.toUpperCase() : 'Select a Country'}</h1>
+      <div className="category-buttons">
+        <button onClick={() => handleCategoryChange('business')}>Business</button>
+        <button onClick={() => handleCategoryChange('entertainment')}>Entertainment</button>
+        <button onClick={() => handleCategoryChange('general')}>General</button>
+        <button onClick={() => handleCategoryChange('health')}>Health</button>
+        <button onClick={() => handleCategoryChange('science')}>Science</button>
+        <button onClick={() => handleCategoryChange('sports')}>Sports</button>
+        <button onClick={() => handleCategoryChange('technology')}>Technology</button>
+      </div>
       {articles.length > 0 ? (
         articles.map((article, index) => (
           <Card key={index} className="news-article">

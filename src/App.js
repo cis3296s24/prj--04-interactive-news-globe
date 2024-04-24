@@ -11,7 +11,7 @@ const countryInfo = new CountriesLog();
 
 export default function App() {
   const [articles, setArticles] = useState([]);
-  const [selectedCountry, setSelectedCountry] = useState('us');
+  const [selectedCountry, setSelectedCountry] = useState(countryInfo.getAllCountries()[0]);
 
 
   const countries = countryInfo.getAllCountries();
@@ -25,7 +25,7 @@ export default function App() {
           position={Cartesian3.fromDegrees(country.position[0], country.position[1])}
           point={{ pixelSize: 10, color: Color.BLACK }}
           description={country.name}
-          onClick={() => setSelectedCountry(country.name)} // Update selectedCountry
+          onClick={() => setSelectedCountry(country)} // Update selectedCountry
         />
       ))}
       <Sidebar articles={articles} selectedCountry={selectedCountry} />

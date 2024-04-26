@@ -13,6 +13,10 @@ This allows to install the packages needed (Craco, Resium, Cesium)
 ```
 npm start  
 ```
+In a separate terminal cd into the server folder and run 
+```
+node server.js
+```
 When you're ready to publish changes to GitHub Pages, run:
 ```
 npm run deploy 

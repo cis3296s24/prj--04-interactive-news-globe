@@ -16,10 +16,15 @@ When done cloning the project, run this command:
 ```
 npm install  
 ```
-This allows to install the packages needed (Craco, Resium, Cesium)
+This allows to install the packages needed (Craco, Resium, Cesium) Then cd into server and run
+```
+node server.js
+```
+Finally, in a separate terminal npm start to run the project
 ```
 npm start  
 ```
+
 When you're ready to publish changes to GitHub Pages, run:
 ```
 npm run deploy 
